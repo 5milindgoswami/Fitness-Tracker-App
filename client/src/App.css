@@ -1,0 +1,11 @@
+.Containers{
+    width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  color: #404040;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: all 0.2s ease;
+}

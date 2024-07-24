@@ -1,0 +1,57 @@
+.Container{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    background: #FFFFFF;
+}
+@media screen and (max-width: 700px) {
+  .Container{flex-direction: column;}
+}
+
+.leftimg{
+    flex: 1;
+    position: relative;
+}
+
+
+@media screen and (max-width: 700px) {
+  .leftimg{display: none;}
+}
+
+
+.startimg{
+    position: relative;
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.rightside{
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.welcometext{
+    font-size: 16px;
+  text-align: center;
+  color: white;
+  margin-top: 16px;
+}
+
+@media screen and (max-width: 400px) {
+  .welcometext{font-size: 14px;}
+}
+
+.joinbutton{
+    color: #007AFF;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}

@@ -1,0 +1,146 @@
+nav{
+background-color:#FFFFFF;
+    width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  color: white;
+  border-bottom: 1px solid  #4d4c4c20;
+}
+.Navcontainer{
+width: 100%;
+  max-width: 1400px;
+  padding: 0 24px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.navlogo{
+    width: 40%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 6px;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  color: black
+}
+
+.logo{
+    /* previously height was 42px if not matched with ui then use this */
+    height: 80px; 
+    background-color: black;
+    border: 1px solid grey;
+}
+
+.mobile{
+    color:#404040 ;
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+.menu{
+    color: black;
+}
+
+.navitems{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding: 0 6px;
+    list-style: none;
+    /* flex-grow: 1; Ensure the navitems take up available space */
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .navitems {
+      display: none;
+    }
+  }
+  .Navlink{
+    width: 15%;
+    display: flex;
+    align-items: center;
+    color:rgb(64,64,64);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 1s ease;
+    text-decoration: none;
+}
+
+.Navlink:hover {
+    color: #007AFF;
+  }
+  
+.Navlink.active {
+    color: #007AFF;
+    border-bottom: 1.8px solid #007AFF;
+  }
+
+.usercontainer{
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  align-items: center;
+  padding: 0 6px;
+  color: #007AFF;
+}
+
+.logout{
+    text-align: end;
+    color: #5B86E5;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+.logout:hover {
+    color: #007AFF;
+  }
+
+.mobileitems{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    padding: 0 6px;
+    list-style: none;
+    width: 90%;
+    padding: 12px 40px 24px 40px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    transition: all 0.6s ease-in-out;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}  
+.mobileitems.closed {
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: -1000;
+  }
+  
+  .mobileitems.open {
+    transform: translateY(0);
+    opacity: 100%;
+    z-index: 1000;
+  }
