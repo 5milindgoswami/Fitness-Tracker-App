@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import "./signup.css"
 import { UserSignIn, UserSignUp } from "../api/apiCall";
 import { loginSuccess } from "../redux/reducers/userSlice";
-import logo from "../pages/images/logo.png";
 
 export default function SignUp(){
 	const dispatch = useDispatch();
