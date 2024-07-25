@@ -289,9 +289,9 @@ body {
         right: 0;
     }
 
-    /* .container.sign-in .col.sign-up {
+    .container.sign-in .col.sign-up {
         transform: translateY(100%);
-    } */
+    }
 
     .container.sign-in .col.sign-in,
     .container.sign-up .col.sign-up {
@@ -334,9 +334,9 @@ body {
         margin: 0;
     }
 
-    .text p {
+    /* .text p {
         display: none;
-    }
+    } */
 
     .text h2 {
         margin: .5rem;
@@ -347,3 +347,4 @@ body {
     color: red; /* Or any color you prefer */
     margin-top: 10px;
 }
+
