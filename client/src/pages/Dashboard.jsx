@@ -7,6 +7,7 @@ import CategoryChart from "../components/cards/CategoryChart";
 import AddWorkout from "../components/AddWorkout";
 import WorkoutCard from "../components/cards/WorkoutCard";
 import { addWorkout, getDashboardDetails, getWorkouts } from "../api/apiCall.js";
+import { CircularProgress } from '@mui/material';
 
 const Dashboard = () => {
   const [loading, setLoading] = useState(false);
@@ -28,6 +29,7 @@ const Dashboard = () => {
       setLoading(false);
     });
   };
+
   const getTodaysWorkout = async () => {
     setLoading(true);
     const token = localStorage.getItem("fittrack-app-token");
@@ -62,6 +64,10 @@ const Dashboard = () => {
     <div className="dashboardcontainer">
       <div className="dashboardWrapper">
         <div className="dashboardtitle">Dashbord</div>
+        {loading ? (
+          <CircularProgress /> // Show loading indicator
+        ) : (
+          <>
         <div className="dashboardflexwrap">
           {counts.map((item) => (
             <CountsCard key={item.name} item={item} data={data} />
@@ -83,6 +89,8 @@ const Dashboard = () => {
       <div>No workouts for today</div>)}
           </div>
         </div>
+        </>
+        )}
       </div>
     </div>
   );

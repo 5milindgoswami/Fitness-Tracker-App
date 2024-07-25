@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import "./workouts.css"
 import WorkoutCard  from "../components/cards/WorkoutCard"
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider"
@@ -6,15 +6,13 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs"
 import { DateCalendar } from "@mui/x-date-pickers"
 import { getWorkouts }  from "../api/apiCall.js"
 import { CircularProgress } from '@mui/material'
-import { useDispatch } from 'react-redux'
 
  const Workouts = () => {
-  const dispatch = useDispatch();
   const [todaysWorkouts, setTodaysWorkouts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [date, setDate] = useState("");
 
-  const getTodaysWorkout = async () => {
+  const getTodaysWorkout = useCallback(async () => {
     setLoading(true);
     const token = localStorage.getItem("fittrack-app-token");
     await getWorkouts(token, date ? `?date=${date}` : "").then((res) => {
@@ -22,11 +20,12 @@ import { useDispatch } from 'react-redux'
       console.log(res.data);
       setLoading(false);
     });
-  };
+  },[date]);
 
   useEffect(() => {
     getTodaysWorkout();
-  }, [date]);
+  }, [date,getTodaysWorkout]);
+  
   return (
     <div className='Workcontainer'>
       <div className='Workwrapper'>

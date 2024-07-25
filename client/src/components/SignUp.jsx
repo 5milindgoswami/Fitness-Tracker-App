@@ -18,11 +18,11 @@ export default function SignUp(){
 
     const validateInputs = () => {
 		if (!name || !email || !password) {
-		  alert("Please fill in all fields");
+		  setMessage("Please fill in all fields");
 		  return false;
 		}
 		if (password !== confirmPassword) {
-            alert("Passwords do not match");
+            setMessage("Passwords do not match");
             return false;
         }
 		return true;
@@ -30,7 +30,7 @@ export default function SignUp(){
 
 	  const validatelogininput = () => {
 		if (!email || !password) {
-		  alert("Please fill in all fields");
+		  setMessage("Please fill in all fields");
 		  return false;
 		}
 		return true;
@@ -41,6 +41,7 @@ export default function SignUp(){
 		e.preventDefault();
 		setLoading(true);
 		setButtonDisabled(true);
+		setMessage("")
 		if (validateInputs()) {
 		  await UserSignUp({ name, email, password })
 			.then((res) => {
@@ -50,7 +51,7 @@ export default function SignUp(){
 			  setButtonDisabled(false);
 			})
 			.catch((err) => {
-			  console.log(err.response.data.message);
+			  setMessage(err.response.data.message);
 			  setLoading(false);
 			  setButtonDisabled(false);
 			});
@@ -62,6 +63,7 @@ export default function SignUp(){
 		e.preventDefault();
 		setLoading(true);
 		setButtonDisabled(true);
+		setMessage("");
 		if (validatelogininput()) {
 		  await UserSignIn({ email, password })
 			.then((res) => {
@@ -72,7 +74,7 @@ export default function SignUp(){
 			  setButtonDisabled(false);
 			})
 			.catch((err) => {
-			  console.log(err.response.data.message);
+				setMessage(err.response.data.message);
 			  setLoading(false);
 			  setButtonDisabled(false);
 			});

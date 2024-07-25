@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes,  Navigate  } from "react-router-dom";
 import Authentication from "./pages/Authentication";
-import { useState } from "react";
 import { useSelector} from "react-redux"
 import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
