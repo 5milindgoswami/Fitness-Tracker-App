@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Workouts from "./pages/Workouts";
 import SignUp from "./components/SignUp"
 
+// add footer name built by milind and also contact us
 function App() {
   const {currentUser} = useSelector((state)=> state.user)
   return(
