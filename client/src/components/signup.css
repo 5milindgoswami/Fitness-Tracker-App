@@ -342,6 +342,9 @@ body {
         margin: .5rem;
         font-size: 2rem;
     }
+    .container{
+        overflow-y: scroll;
+    }
 }
 .error-message {
     color: red; /* Or any color you prefer */
